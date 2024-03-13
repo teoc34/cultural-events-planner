@@ -64,6 +64,19 @@ Ryu = modelCCA.y_loadings_
 pd.DataFrame(data=Rxz, index=indexes, columns=prodLab).to_csv('./dataOUT/Rxz.csv')
 pd.DataFrame(data=Ryu, index=indexes, columns=conLab).to_csv('./dataOUT/Ryu.csv')
 
+# request 6
+def biplot(x: np.ndarray, y:np.ndarray):
+    plt.figure(figsize=(7 ,7))
+    plt.title("Biplot(z1, u1)/(z2, u2)")
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.scatter(x[:, 0], x[:, 1], c='r', label='X')
+    plt.scatter(y[:, 0], y[:, 1], c='b', label='Y')
+    plt.legend()
+    plt.show()
+biplot(z[:, [0, 1]], u[:, [0, 1]])
+
+
 
 
 
